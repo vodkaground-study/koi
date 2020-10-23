@@ -26,6 +26,6 @@ def solution() :
     
     print('총 보이는 갯수 : ', viewCnt)
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     solution()
 
