@@ -51,14 +51,26 @@ ex 1,2,6
 1234
 
 '''
-print(math.factorial(4) +1)
 
-def solution() :
-    left = 0
-    right = 0
+# 정보올림피아드 답임. dfs 스터디
+def main():
+	L = set()
+	
+	N = int(input())
+	a = list(map(int, input().split()))
+	t = sum(a)
+	
+	def dfs(x, s):
+		if x == N:
+			if 0 < s <= t:
+				L.add(s)
+		else:
+			dfs(x+1, s-a[x])
+			dfs(x+1, s)
+			dfs(x+1, s+a[x])
+	
+	dfs(0, 0)
+	
+	print(t - len(L))
 
-
-def loopFunc(left, arr) :
-    while(len(arr)) :
-        pass
-        
+main()
